@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------
@@ -75,11 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
-	'dbdriver' => 'mysqli',
+	'hostname' => $_ENV['DB_HOSTNAME'] ?? 'localhost',
+	'username' => $_ENV['DB_USERNAME'] ?? 'root',
+	'password' => $_ENV['DB_PASSWORD'] ?? '',
+	'database' => $_ENV['DB_DATABASE'] ?? 'ngolshop',
+	'dbdriver' => $_ENV['DB_DRIVER'] ?? 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),

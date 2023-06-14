@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -49,6 +49,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+
+$route['default_controller'] = 'home';
+$route['404_override'] = 'override/notfound';
+$route['500_override'] = 'override/server';
+$route['translate_uri_dashes'] = false;
+
+$route['app/products']['GET'] = 'app/products';
+$route['app/products/add']['GET'] = 'app/products/add';
+$route['app/products/add']['POST'] = 'app/products/insert';
+$route['app/products/([0-9]+)']['GET'] = 'app/products/detail/$1';
+$route['app/products/edit/([0-9]+)']['GET'] = 'app/products/edit/$1';
+$route['app/products/edit/([0-9]+)']['POST'] = 'app/products/update/$1';
+$route['app/products/delete/([0-9]+)']['GET'] = 'app/products/delete/$1';
+
+// disable auto route
+$route['(.*)'] = 'none';

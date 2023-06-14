@@ -1,0 +1,64 @@
+@import url(https://api.fonts.coollabs.io/css2?family=Poppins:wght@400;500&display=swap);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #f7f8fa;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  color: #46444c;
+  position: relative;
+}
+
+body:before {
+  content: "";
+  background: #0fac81;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  position: absolute;
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  background-color: #17161a;
+  color: #f7f8fa;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+main {
+  max-width: 620px;
+  margin: auto;
+  height: 100vh;
+  padding: 0 30px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+main .title {
+  font-size: 50px;
+  line-height: 50px;
+  margin-bottom: 20px;
+  color: #17161a;
+}
+
+main .subtitle {
+  font-size: 26px;
+  margin-bottom: 0;
+}
+
+main .subtitle img {
+  margin-top: 15px;
+  width: 100%;
+  max-width: 150px;
+}
