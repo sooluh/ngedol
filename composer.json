@@ -6,6 +6,8 @@
   "license": "Apache-2.0",
   "require": {
     "php": ">=5.3.7",
-    "vlucas/phpdotenv": "^5.5"
+    "vlucas/phpdotenv": "^5.5",
+    "phpoffice/phpspreadsheet": "^1.29",
+    "dompdf/dompdf": "^2.0"
   }
 }
