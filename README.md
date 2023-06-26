@@ -1,4 +1,4 @@
-# Ngolshop 🛒
+# Ngedol 🛒
 
 Only "Pemrograman Web Lanjut" task fulfillment.
 
@@ -13,13 +13,13 @@ Only "Pemrograman Web Lanjut" task fulfillment.
 2. Clone or download this repository
 
    ```bash
-   git clone https://github.com/sooluh/ngolshop.git
+   git clone https://github.com/sooluh/ngedol.git
    ```
 
 3. Change current directoy to repository directory
 
    ```bash
-   cd ngolshop
+   cd ngedol
    ```
 
 4. Install composer dependencies

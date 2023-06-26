@@ -1,8 +1,8 @@
 {
-  "description": "Ngolshop",
-  "name": "sooluh/ngolshop",
+  "description": "Ngedol",
+  "name": "sooluh/ngedol",
   "type": "project",
-  "homepage": "https://github.com/sooluh/ngolshop",
+  "homepage": "https://github.com/sooluh/ngedol",
   "license": "Apache-2.0",
   "require": {
     "php": ">=5.3.7",
