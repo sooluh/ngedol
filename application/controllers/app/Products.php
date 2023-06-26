@@ -1,15 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Products extends CI_Controller
+class Products extends MY_Controller
 {
-	public CI_Input $input;
-	public CI_Output $output;
-	public CI_Upload $upload;
-	public CI_Session $session;
-	public CI_Security $security;
 	public Products_model $products;
-	public CI_Form_validation $form_validation;
 
 	public function __construct()
 	{
@@ -85,14 +79,46 @@ class Products extends CI_Controller
 	public function insert()
 	{
 		$this->form_validation->set_rules([
-			['field' => 'name', 'label' => 'Nama', 'rules' => 'required|max_length[255]'],
-			['field' => 'type', 'label' => 'Satuan', 'rules' => 'required|is_natural_no_zero'],
-			['field' => 'stock', 'label' => 'Stok', 'rules' => 'required|is_natural'],
-			['field' => 'price', 'label' => 'Harga', 'rules' => 'required|is_natural'],
+			[
+				'field' => 'name',
+				'label' => 'Nama',
+				'rules' => 'required|max_length[255]',
+				'errors' => [
+					'required' => 'Nama tidak boleh kosong.',
+					'max_length' => 'Nama tidak boleh lebih dari 255 karakter.',
+				],
+			],
+			[
+				'field' => 'type',
+				'label' => 'Satuan',
+				'rules' => 'required|is_natural_no_zero',
+				'errors' => [
+					'required' => 'Satuan tidak boleh kosong.',
+					'is_natural_no_zero' => 'Satuan tidak valid.',
+				],
+			],
+			[
+				'field' => 'stock',
+				'label' => 'Stok',
+				'rules' => 'required|is_natural',
+				'errors' => [
+					'required' => 'Stok tidak boleh kosong.',
+					'is_natural' => 'Stok tidak valid.',
+				],
+			],
+			[
+				'field' => 'price',
+				'label' => 'Harga',
+				'rules' => 'required|is_natural',
+				'errors' => [
+					'required' => 'Harga tidak boleh kosong.',
+					'is_natural' => 'Harga tidak valid.',
+				],
+			],
 		]);
 
 		if (!$this->form_validation->run()) {
-			$this->session->set_flashdata('failed', $this->form_validation->error_array()[0]);
+			$this->session->set_flashdata('failed', array_shift($this->form_validation->error_array()));
 			return redirect('app/products');
 		}
 
@@ -128,14 +154,46 @@ class Products extends CI_Controller
 		}
 
 		$this->form_validation->set_rules([
-			['field' => 'name', 'label' => 'Nama', 'rules' => 'required|max_length[255]'],
-			['field' => 'type', 'label' => 'Satuan', 'rules' => 'required|is_natural_no_zero'],
-			['field' => 'stock', 'label' => 'Stok', 'rules' => 'required|is_natural'],
-			['field' => 'price', 'label' => 'Harga', 'rules' => 'required|is_natural'],
+			[
+				'field' => 'name',
+				'label' => 'Nama',
+				'rules' => 'required|max_length[255]',
+				'errors' => [
+					'required' => 'Nama tidak boleh kosong.',
+					'max_length' => 'Nama tidak boleh lebih dari 255 karakter.',
+				],
+			],
+			[
+				'field' => 'type',
+				'label' => 'Satuan',
+				'rules' => 'required|is_natural_no_zero',
+				'errors' => [
+					'required' => 'Satuan tidak boleh kosong.',
+					'is_natural_no_zero' => 'Satuan tidak valid.',
+				],
+			],
+			[
+				'field' => 'stock',
+				'label' => 'Stok',
+				'rules' => 'required|is_natural',
+				'errors' => [
+					'required' => 'Stok tidak boleh kosong.',
+					'is_natural' => 'Stok tidak valid.',
+				],
+			],
+			[
+				'field' => 'price',
+				'label' => 'Harga',
+				'rules' => 'required|is_natural',
+				'errors' => [
+					'required' => 'Harga tidak boleh kosong.',
+					'is_natural' => 'Harga tidak valid.',
+				],
+			],
 		]);
 
 		if (!$this->form_validation->run()) {
-			$this->session->set_flashdata('failed', $this->form_validation->error_array()[0]);
+			$this->session->set_flashdata('failed', array_shift($this->form_validation->error_array()));
 			return redirect('app/products/edit/' . $id);
 		}
 

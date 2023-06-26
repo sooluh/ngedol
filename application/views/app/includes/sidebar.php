@@ -9,14 +9,14 @@
 		<div class="sidebar-user">
 			<div class="d-flex justify-content-center">
 				<div class="flex-shrink-0">
-					<img src="https://avatars3.githubusercontent.com/u/20874779" class="avatar img-fluid rounded me-1" alt="<?= settings('author') ?>" />
+					<img src="https://avatars3.githubusercontent.com/u/20874779" class="avatar img-fluid rounded me-1" alt="<?= $this->userdata->name ?>" />
 				</div>
 
 				<div class="flex-grow-1 ps-2">
 					<a class="sidebar-user-title" href="https://github.com/sooluh/ngolshop" target="_blank">
-						<?= settings('author') ?>
+						<?= $this->userdata->name ?>
 					</a>
-					<div class="sidebar-user-subtitle">Developer</div>
+					<div class="sidebar-user-subtitle">Admin</div>
 				</div>
 			</div>
 		</div>

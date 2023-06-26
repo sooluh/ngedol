@@ -55,6 +55,10 @@ $route['404_override'] = 'override/notfound';
 $route['500_override'] = 'override/server';
 $route['translate_uri_dashes'] = false;
 
+$route['auth/login']['GET'] = 'auth/login';
+$route['auth/login']['POST'] = 'auth/login/process';
+$route['auth/logout']['GET'] = 'auth/login/logout';
+
 $route['app/products']['GET'] = 'app/products';
 $route['app/products/add']['GET'] = 'app/products/add';
 $route['app/products/add']['POST'] = 'app/products/insert';

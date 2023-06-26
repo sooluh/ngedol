@@ -25,11 +25,11 @@
 
 			<li class="nav-item dropdown">
 				<a class="nav-icon pe-md-0 dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown">
-					<img src="https://avatars3.githubusercontent.com/u/20874779" class="avatar img-fluid rounded" alt="<?= settings('author') ?>" />
+					<img src="<?= $this->userdata->avatar ?>" class="avatar img-fluid rounded" alt="<?= settings('author') ?>" />
 				</a>
 
 				<div class="dropdown-menu dropdown-menu-end">
-					<a class="dropdown-item" href="<?= base_url() ?>">
+					<a class="dropdown-item" href="<?= base_url('auth/logout') ?>">
 						<i class="align-middle me-1" data-feather="log-out"></i>
 						Keluar
 					</a>

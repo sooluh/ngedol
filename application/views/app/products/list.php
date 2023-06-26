@@ -95,8 +95,11 @@
 					title: 'Apakah kamu yakin?',
 					text: 'Setelah dihapus, Ini tidak dapat dikembalikan!',
 					icon: 'warning',
-					buttons: true,
-					dangerMode: true
+					showCancelButton: true,
+					confirmButtonColor: '#3085d6',
+					cancelButtonColor: '#d33',
+					confirmButtonText: 'Ya, hapus ini!',
+					cancelButtonText: 'Batalkan'
 				}).then(function(result) {
 					if (result.isConfirmed) {
 						window.location.href = target;

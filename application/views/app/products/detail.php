@@ -30,34 +30,22 @@
 							<div class="card">
 								<div class="card-body">
 									<div class="mb-3">
-										<label class="form-label" for="name">
-											Nama Produk
-											<span class="text-danger">*</span>
-										</label>
+										<label class="form-label" for="name">Nama Produk</label>
 										<span class="d-block fw-bold"><?= $detail->name ?></span>
 									</div>
 
 									<div class="mb-3">
-										<label class="form-label" for="type">
-											Satuan
-											<span class="text-danger">*</span>
-										</label>
+										<label class="form-label" for="type">Satuan</label>
 										<span class="d-block fw-bold"><?= types($detail->type) ?></span>
 									</div>
 
 									<div class="mb-3">
-										<label class="form-label" for="stock">
-											Stok
-											<span class="text-danger">*</span>
-										</label>
+										<label class="form-label" for="stock">Stok</label>
 										<span class="d-block fw-bold"><?= $detail->stock ?></span>
 									</div>
 
 									<div class="mb-0">
-										<label class="form-label" for="price">
-											Harga Satuan
-											<span class="text-danger">*</span>
-										</label>
+										<label class="form-label" for="price">Harga Satuan</label>
 										<span class="d-block fw-bold"><?= rupiah($detail->price) ?></span>
 									</div>
 								</div>
@@ -67,10 +55,7 @@
 						<div class="col-md-6">
 							<div class="card">
 								<div class="card-body">
-									<label for="image" class="form-label">
-										Gambar
-										<span class="text-danger">*</span>
-									</label>
+									<label for="image" class="form-label">Gambar</label>
 									<img class="w-100" src="<?= base_url('uploads/' . $detail->image) ?>" alt="<?= $detail->name ?>">
 								</div>
 							</div>
