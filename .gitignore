@@ -1,5 +1,5 @@
-.vercel/
 vendor/
+node_modules/
 application/cache/*
 application/logs/*
 
