@@ -42,7 +42,7 @@
 											Nama Produk
 											<span class="text-danger">*</span>
 										</label>
-										<input type="text" class="form-control" id="name" name="name" placeholder="Nama Produk" required="">
+										<input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Nama Produk" required="">
 										<div class="invalid-feedback">
 											Nama produk tidak boleh kosong.
 										</div>
@@ -53,7 +53,7 @@
 											Satuan
 											<span class="text-danger">*</span>
 										</label>
-										<select name="type" id="type" class="form-control" required="">
+										<select name="type" id="type" class="form-control form-control-lg choices" required="">
 											<option value="">-- Pilih Satuan --</option>
 											<?php foreach (types() as $value => $text) : ?>
 												<option value="<?= $value ?>"><?= $text ?></option>
@@ -69,7 +69,7 @@
 											Stok
 											<span class="text-danger">*</span>
 										</label>
-										<input type="number" class="form-control" id="stock" name="stock" placeholder="Stok Produk" required="">
+										<input type="number" class="form-control form-control-lg" id="stock" name="stock" placeholder="Stok Produk" required="">
 										<div class="invalid-feedback">
 											Stok produk tidak boleh kosong.
 										</div>
@@ -80,7 +80,7 @@
 											Harga Satuan
 											<span class="text-danger">*</span>
 										</label>
-										<input type="number" class="form-control" id="price" name="price" placeholder="Harga" required="">
+										<input type="number" class="form-control form-control-lg" id="price" name="price" placeholder="Harga" required="">
 										<div class="invalid-feedback">
 											Harga produk tidak boleh kosong.
 										</div>
@@ -96,7 +96,7 @@
 										Gambar
 										<span class="text-danger">*</span>
 									</label>
-									<input type="file" id="image" name="image" class="form-control dropify" data-allowed-file-extensions="png jpg jpeg gif webp" required="" />
+									<input type="file" id="image" name="image" class="form-control form-control-lg dropify" data-allowed-file-extensions="png jpg jpeg gif webp" required="" />
 								</div>
 							</div>
 						</div>
@@ -113,6 +113,7 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			$('.dropify').dropify();
+			new Choices(document.querySelector('.choices'));
 
 			Array.prototype.slice
 				.call(document.querySelectorAll('.needs-validation'))

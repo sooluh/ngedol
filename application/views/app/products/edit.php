@@ -42,7 +42,7 @@
 											Nama Produk
 											<span class="text-danger">*</span>
 										</label>
-										<input type="text" class="form-control" id="name" name="name" placeholder="Nama Produk" value="<?= $detail->name ?>" required="">
+										<input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Nama Produk" value="<?= $detail->name ?>" required="">
 										<div class="invalid-feedback">
 											Nama produk tidak boleh kosong.
 										</div>
@@ -53,7 +53,7 @@
 											Satuan
 											<span class="text-danger">*</span>
 										</label>
-										<select name="type" id="type" class="form-control" required="">
+										<select name="type" id="type" class="form-control form-control-lg" required="">
 											<option value="">-- Pilih Satuan --</option>
 											<?php foreach (types() as $value => $text) : ?>
 												<option value="<?= $value ?>" <?= $detail->type == $value ? 'selected=""' : '' ?>><?= $text ?></option>
@@ -69,7 +69,7 @@
 											Stok
 											<span class="text-danger">*</span>
 										</label>
-										<input type="number" class="form-control" id="stock" name="stock" placeholder="Stok Produk" value="<?= $detail->stock ?>" required="">
+										<input type="number" class="form-control form-control-lg" id="stock" name="stock" placeholder="Stok Produk" value="<?= $detail->stock ?>" required="">
 										<div class="invalid-feedback">
 											Stok produk tidak boleh kosong.
 										</div>
@@ -80,7 +80,7 @@
 											Harga Satuan
 											<span class="text-danger">*</span>
 										</label>
-										<input type="number" class="form-control" id="price" name="price" placeholder="Harga" value="<?= (int) $detail->price ?>" required="">
+										<input type="number" class="form-control form-control-lg" id="price" name="price" placeholder="Harga" value="<?= (int) $detail->price ?>" required="">
 										<div class="invalid-feedback">
 											Harga produk tidak boleh kosong.
 										</div>
@@ -93,7 +93,7 @@
 							<div class="card">
 								<div class="card-body">
 									<label for="image" class="form-label">Gambar</label>
-									<input type="file" id="image" name="image" class="form-control dropify" data-allowed-file-extensions="png jpg jpeg gif webp" data-default-file="<?= base_url('uploads/' . $detail->image) ?>" />
+									<input type="file" id="image" name="image" class="form-control form-control-lg dropify" data-allowed-file-extensions="png jpg jpeg gif webp" data-default-file="<?= base_url('uploads/' . $detail->image) ?>" />
 								</div>
 							</div>
 						</div>
@@ -110,6 +110,7 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
 			$('.dropify').dropify();
+			new Choices(document.querySelector('.choices'));
 
 			Array.prototype.slice
 				.call(document.querySelectorAll('.needs-validation'))
