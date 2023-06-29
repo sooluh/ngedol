@@ -1,6 +1,6 @@
 # Ngedol 🛒
 
-Only "Pemrograman Web Lanjut" task fulfillment.
+Only Pemrograman Web Lanjut task fulfillment.
 
 ## Requirements
 

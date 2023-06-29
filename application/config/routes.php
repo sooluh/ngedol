@@ -66,6 +66,8 @@ $route['app/products/([0-9]+)']['GET'] = 'app/products/detail/$1';
 $route['app/products/edit/([0-9]+)']['GET'] = 'app/products/edit/$1';
 $route['app/products/edit/([0-9]+)']['POST'] = 'app/products/update/$1';
 $route['app/products/delete/([0-9]+)']['GET'] = 'app/products/delete/$1';
+$route['app/products/export/pdf']['GET'] = 'app/products/pdf';
+$route['app/products/export/xlsx']['GET'] = 'app/products/xlsx';
 
 // disable auto route
 $route['(.*)'] = 'none';

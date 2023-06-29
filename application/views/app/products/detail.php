@@ -56,7 +56,7 @@
 							<div class="card">
 								<div class="card-body">
 									<label for="image" class="form-label">Gambar</label>
-									<img class="w-100 rounded" src="<?= base_url('uploads/' . $detail->image) ?>" alt="<?= $detail->name ?>">
+									<img class="w-100 rounded" src="<?= base_url('uploads/products/' . $detail->image) ?>" alt="<?= $detail->name ?>">
 								</div>
 							</div>
 						</div>

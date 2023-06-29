@@ -53,7 +53,7 @@
 											Satuan
 											<span class="text-danger">*</span>
 										</label>
-										<select name="type" id="type" class="form-control form-control-lg" required="">
+										<select name="type" id="type" class="form-control form-control-lg choices" required="">
 											<option value="">-- Pilih Satuan --</option>
 											<?php foreach (types() as $value => $text) : ?>
 												<option value="<?= $value ?>" <?= $detail->type == $value ? 'selected=""' : '' ?>><?= $text ?></option>
@@ -93,7 +93,7 @@
 							<div class="card">
 								<div class="card-body">
 									<label for="image" class="form-label">Gambar</label>
-									<input type="file" id="image" name="image" class="form-control form-control-lg dropify" data-allowed-file-extensions="png jpg jpeg gif webp" data-default-file="<?= base_url('uploads/' . $detail->image) ?>" />
+									<input type="file" id="image" name="image" class="form-control form-control-lg dropify" data-allowed-file-extensions="png jpg jpeg gif webp" data-default-file="<?= base_url('uploads/products/' . $detail->image) ?>" />
 								</div>
 							</div>
 						</div>

@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+use Dompdf\Dompdf;
+use Dompdf\Options;
+
 class Products extends MY_Controller
 {
 	public Products_model $products;
@@ -237,5 +240,29 @@ class Products extends MY_Controller
 
 		$this->session->set_flashdata('success', 'Data produk berhasil dihapus.');
 		return redirect('app/products');
+	}
+
+	public function pdf()
+	{
+		$html = $this->load->view('app/products/print', [
+			'products' => $this->products->all(),
+			'num' => 1,
+		], true);
+
+		$options = new Options();
+		$options->setIsRemoteEnabled(true);
+
+		$dompdf = new Dompdf($options);
+		$dompdf->loadHtml($html);
+		$dompdf->setPaper('A4', 'portrait');
+		$dompdf->render();
+
+		// as stream
+		$dompdf->stream('products.pdf', ['Attachment' => false]);
+		exit();
+	}
+
+	public function xlsx()
+	{
 	}
 }
