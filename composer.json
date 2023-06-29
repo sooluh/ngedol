@@ -5,7 +5,7 @@
   "homepage": "https://github.com/sooluh/ngedol",
   "license": "Apache-2.0",
   "require": {
-    "php": ">=5.3.7",
+    "php": ">=7.4",
     "vlucas/phpdotenv": "^5.5",
     "phpoffice/phpspreadsheet": "^1.29",
     "dompdf/dompdf": "^2.0",

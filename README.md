@@ -1,6 +1,6 @@
 # Ngedol 🛒
 
-Only Pemrograman Web Lanjut task fulfillment.
+Only `Pemrograman Web Lanjut` task fulfillment.
 
 ## Requirements
 
@@ -28,7 +28,24 @@ Only Pemrograman Web Lanjut task fulfillment.
    composer install
    ```
 
-5. MasyaAllah!
+5. Go to (probably `http://localhost/ngedol`), and **MasyaAllah**!
+6. You will get an error, hehe..
+7. Create one database, whatever. I suggest with name `ngedol`.
+
+8. Copy `.env.example` file to `.env` and customize contents!
+   Just focus on this 👇🏻
+
+   ```bash
+   DB_HOSTNAME=localhost
+   DB_USERNAME=root
+   DB_PASSWORD=
+   DB_DATABASE=ngedol
+   DB_DRIVER=mysqli
+   ```
+
+9. Export (or `copy paste` contents into SQL tab) `ngedol.db` file
+   in `database` directory to your own database.
+10. Sleep tightly!
 
 ## Features
 
