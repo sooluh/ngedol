@@ -16,7 +16,7 @@ body {
 
 body:before {
   content: "";
-  background: #0fac81;
+  background: #3b7ddd;
   top: 0;
   left: 0;
   right: 0;
@@ -26,13 +26,44 @@ body:before {
 
 a {
   text-decoration: none;
+  color: #f7f8fa;
+  transition: 0.5s;
 }
 
-code {
+a:hover {
+  color: #9c9c9d;
+}
+
+blockquote {
+  display: block;
+  width: 100%;
   background-color: #17161a;
   color: #f7f8fa;
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  font-size: 0.85rem;
+}
+
+blockquote p {
+  margin-bottom: 0.75rem;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote ul {
+  margin-top: 0.5rem;
+  list-style: none;
+  margin-bottom: 0.75rem;
+}
+
+blockquote ul > li {
+  margin-bottom: 0.25rem;
+}
+
+blockquote ul > li:last-child {
+  margin-bottom: 0;
 }
 
 main {
@@ -46,19 +77,13 @@ main {
 }
 
 main .title {
-  font-size: 50px;
+  font-size: 2.5rem;
   line-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 0.5rem;
   color: #17161a;
 }
 
 main .subtitle {
-  font-size: 26px;
-  margin-bottom: 0;
-}
-
-main .subtitle img {
-  margin-top: 15px;
-  width: 100%;
-  max-width: 150px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }

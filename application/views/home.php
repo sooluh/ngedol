@@ -19,11 +19,8 @@
 				<?= $_ENV['SITE_TITLE'] ?>
 			</h1>
 
-			<p class="subtitle">
-				Halaman untuk CRUD-nya ada di
-				<a href="<?= base_url('app/products') ?>"><code>/app/products</code></a>
-				pak, hehe.
-			</p>
+			<p class="subtitle"><?= $_ENV['SITE_DESCRIPTION'] ?></p>
+			<blockquote><?= html_entity_decode($content) ?></blockquote>
 		</div>
 	</main>
 </body>

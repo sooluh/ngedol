@@ -11,7 +11,7 @@ class Products extends MY_Controller
 		$this->load->model('Products_model', 'products');
 
 		$this->upload->initialize([
-			'upload_path' => FCPATH . '/uploads/',
+			'upload_path' => FCPATH . '/uploads/products/',
 			'allowed_types' => 'png|jpg|jpeg|webp',
 			'file_ext_tolower' => true,
 			'encrypt_name' => true,
