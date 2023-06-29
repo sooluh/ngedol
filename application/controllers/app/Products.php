@@ -3,6 +3,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Style\Border;
+use PhpOffice\PhpSpreadsheet\Style\Color;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Products extends MY_Controller
 {
@@ -257,12 +261,69 @@ class Products extends MY_Controller
 		$dompdf->setPaper('A4', 'portrait');
 		$dompdf->render();
 
-		// as stream
 		$dompdf->stream('products.pdf', ['Attachment' => false]);
 		exit();
 	}
 
 	public function xlsx()
 	{
+		$header = ['#', 'Nama Barang', 'Satuan', 'Stok Tersedia', 'Harga Satuan'];
+		$products = array_map(function ($product) {
+			return [0, $product->name, types($product->type), $product->stock, $product->price];
+		}, $this->products->all());
+
+		$spreadsheet = new Spreadsheet();
+		$spreadsheet->getProperties()->setCreator('@sooluh')->setTitle('Daftar Produk');
+
+		$spreadsheet->setActiveSheetIndex(0)
+			->setCellValue('A1', 'DAFTAR PRODUK')
+			->mergeCells('A1:E1')
+			->setCellValue('A2', 'Diunduh pada ' . date('Y-m-d H:i:s'))
+			->mergeCells('A2:E2');
+
+		$idx = 3;
+		foreach ([$header, ...$products] as $row) {
+			$idx += 1;
+			$spreadsheet->setActiveSheetIndex(0)
+				->setCellValue('A' . $idx, $row[0] ?: ($idx - 4))
+				->setCellValue('B' . $idx, $row[1])
+				->setCellValue('C' . $idx, $row[2])
+				->setCellValue('D' . $idx, $row[3])
+				->setCellValue('E' . $idx, $row[4]);
+			$spreadsheet->getActiveSheet()
+				->getStyle('A' . $idx . ':E' . $idx)
+				->getBorders()
+				->getAllBorders()
+				->setBorderStyle(Border::BORDER_THIN)
+				->setColor(new Color('000000'));
+		}
+
+		foreach (range('A', 'E') as $col) {
+			$spreadsheet->getActiveSheet()
+				->getColumnDimension($col)
+				->setAutoSize(true);
+		}
+
+		$spreadsheet->getActiveSheet()
+			->getStyle('A1')
+			->applyFromArray(['font' => ['bold' => true]]);
+		$spreadsheet->getActiveSheet()
+			->getStyle('A')
+			->getAlignment()
+			->setHorizontal('center');
+		$spreadsheet->getActiveSheet()
+			->getStyle("A4:E4")
+			->applyFromArray(['font' => ['bold' => true]]);
+
+		$worksheet = $spreadsheet->getActiveSheet();
+		$worksheet->setTitle('Produk');
+
+		$writer = new Xlsx($spreadsheet);
+
+		header('Content-Type: application/vnd.ms-excel');
+		header('Content-Disposition: attachment; filename=products.xlsx');
+		header('Cache-Control: max-age=0');
+
+		$writer->save('php://output');
 	}
 }

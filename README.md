@@ -39,12 +39,13 @@ Only Pemrograman Web Lanjut task fulfillment.
    3. Update Product
    4. Delete Product (Soft Delete)
    5. Product Detail
-   6. Export PDF
+   6. Export `pdf`
+   7. Export `xlsx`
 
 ## To-Do
 
 - [x] Print Products List (PDF)
-- [ ] Export to Excel
+- [x] Export to Excel
 
 ## License
 

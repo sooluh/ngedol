@@ -13,7 +13,7 @@
 				</div>
 
 				<div class="flex-grow-1 ps-2">
-					<a class="sidebar-user-title" href="https://github.com/sooluh/ngedol" target="_blank">
+					<a class="sidebar-user-title" href="javascript:void(0)" target="_blank">
 						<?= $this->userdata->name ?>
 					</a>
 					<div class="sidebar-user-subtitle">Admin</div>
