@@ -35,14 +35,15 @@ Only Pemrograman Web Lanjut task fulfillment.
 1. Authentication
 2. Products Management
    1. Products List
-   2. Add Product w/ Attachment (Image)
+   2. Add Product w/ Image
    3. Update Product
-   4. Remove Product (Soft Delete)
-   5. Detail Product
+   4. Delete Product (Soft Delete)
+   5. Product Detail
+   6. Export PDF
 
 ## To-Do
 
-- [ ] Print Products List (PDF)
+- [x] Print Products List (PDF)
 - [ ] Export to Excel
 
 ## License
