@@ -9,7 +9,7 @@
 		<div class="sidebar-user">
 			<div class="d-flex justify-content-center">
 				<div class="flex-shrink-0">
-					<img src="https://avatars3.githubusercontent.com/u/20874779" class="avatar img-fluid rounded me-1" alt="<?= $this->userdata->name ?>" />
+					<img src="<?= $this->userdata->avatar ?>" class="avatar img-fluid rounded me-1" alt="<?= $this->userdata->name ?>" />
 				</div>
 
 				<div class="flex-grow-1 ps-2">
