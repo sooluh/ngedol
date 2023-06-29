@@ -13,11 +13,11 @@ class Home extends CI_Controller
 
 	public function index()
 	{
-		$file = file_exists(FCPATH . '/NGEDOL.md');
+		$file = file_exists(FCPATH . '/ngedol.md');
 		$content = '';
 
 		if ($file) {
-			$content = file_get_contents(FCPATH . '/NGEDOL.md');
+			$content = file_get_contents(FCPATH . '/ngedol.md');
 			$content = $this->myparser->parse($content);
 		}
 
